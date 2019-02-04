@@ -1,16 +1,16 @@
 require 'dockerspec/serverspec'
 require 'dockerspec/infrataster'
 
-describe docker_build('.', tag: 'evait/dradis-ce') do
+describe docker_build('.', tag: 'kimdane/dradis-ce') do
   it { should have_workdir '/opt/dradis-ce' }
   it { should have_expose '3000' }
   it { should have_entrypoint %w(/entrypoint.sh) }
 
-  describe docker_build('spec/', tag: 'evait/dradis-ce_test') do
+  describe docker_build('spec/', tag: 'kimdane/dradis-ce_test') do
     docker_env = { 'SECRET_KEY_BASE' => 'secret' }
     wait = ENV['TRAVIS'] ? 10 : 2
 
-    describe docker_run('evait/dradis-ce_test', env: docker_env, wait: wait) do
+    describe docker_run('kimdane/dradis-ce_test', env: docker_env, wait: wait) do
 
       describe package('nodejs') do
         it { should be_installed }

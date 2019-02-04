@@ -1,4 +1,4 @@
-FROM evait/dradis-ce
+FROM kimdane/dradis-ce
 
 USER root
 

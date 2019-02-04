@@ -22,9 +22,9 @@ From [its own website](http://dradisframework.org/):
 
 ##### Build
 
-    $ git clone https://github.com/evait-security/dradis-docker-ce.git
-    $ cd dradis-docker-ce
-    $ docker build -t evait/dradis-ce .
+    $ git clone https://github.com/kimdane/dradis-ce.git
+    $ cd dradis-ce
+    $ docker build -t kimdane/dradis-ce .
 
 ##### Create a Directory to Store the Database Data
 
@@ -47,7 +47,7 @@ You need to set the `/dbdata` and `/templates` volume path and link the Redis co
         --volume "$(pwd)/dbdata:/dbdata" \
         --link dradis-redis:redis \
         --volume "$(pwd)/templates:/opt/dradis-ce/templates" \
-      evait/dradis-ce
+      kimdane/dradis-ce
 
 You can now open [http://127.0.0.1:3000/](http://127.0.0.1:3000/) to access Dradis.
 

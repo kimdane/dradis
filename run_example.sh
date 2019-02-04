@@ -5,4 +5,4 @@ docker run \
   --volume "$(pwd)/dbdata:/dbdata" \
   --volume "$(pwd)/templates:/opt/dradis-ce/templates" \
   --link dradis-redis:redis \
-  evait/dradis-ce "${@}"
+  kimdane/dradis-ce "${@}"
